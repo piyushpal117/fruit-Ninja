@@ -1,0 +1,107 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pixi</title>
+    <style>
+         body {
+            margin: 0;
+            /* padding: 0;
+            overflow: hidden; */
+        }
+        </style>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pixi</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column; /* Arrange elements in a column */
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Dancing Script', cursive;
+            position: relative;
+            overflow: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('images/background.jpg');
+            background-size: cover;
+            background-position: center;
+            filter: blur(5px); 
+            z-index: -1;
+        }
+
+        h1 {
+            font-size: 64px;
+            color: rgb(148, 1, 37);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+            margin: 0;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 24px;
+            color: rgb(30, 59, 10);
+            margin: 0;
+            margin-bottom: 20px; 
+        }
+
+        button {
+            padding: 20px 90px;
+            font-size: 24px;
+            cursor: pointer;
+            border: none;
+            border-radius: 12px;
+            background-color: #4b8f0b;
+            color: white;
+        }
+
+        button:hover {
+            background-color: #5da817;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fruit Ninja...🔪</h1>
+    <p>Click to Start</p>
+    <button id="playButton">Play</button>
+
+    <script>
+        const playButton = document.getElementById('playButton');
+        playButton.addEventListener('click', () => {
+            // Remove the button from the page
+            playButton.remove();
+
+            // Dynamically load the main.js script
+            const script = document.createElement('script');
+            script.type = 'module';
+            script.src = '/src/main.js';
+            document.body.appendChild(script);
+        });
+    </script>
+</body>
+</html>
