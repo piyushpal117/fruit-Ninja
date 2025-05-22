@@ -20,13 +20,13 @@ import { Howl } from "howler";
   app.canvas.style.position = "absolute";
 
   // Load and add background
-  const base = await Assets.load("/images/background.jpg");
+  const base = await Assets.load("/images/backdrop.png");
   const bg = new TilingSprite({
     texture: base,
     width: app.screen.width,
     height: app.screen.height,
   });
-  // bg.tileScale.set(1.9, 1.5);
+  bg.tileScale.set(2.1,1.9);
   bg.tilePosition.set(0, 1000);
   app.stage.addChild(bg);
 
